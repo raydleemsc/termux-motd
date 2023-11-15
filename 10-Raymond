@@ -8,6 +8,6 @@ else
     BLUE='\e[1;34m'
     NC='\033[0m'
     printf "${BLUE}"
-    figlet "Termux"
-    printf "${BLUE}"
+    figlet "Raymond"
+    printf "${NC}"
 fi 

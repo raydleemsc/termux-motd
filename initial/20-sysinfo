@@ -24,18 +24,20 @@ if [[ -d /system/app/ && -d /system/priv-app ]]; then
     MODEL="$(getprop ro.product.brand) $(getprop ro.product.model)"
 fi
 
-DISTRO="$(lsb_release -a 2>&1 | grep 'Description'|awk '{print $2, $3, $4}')"
-MODEL=$HOSTNAME
+W="\e[0;39m"
+G="\e[1;32m"
+C="\e[1;36m"
+BOLD='\033[1m'
 
-. $MOTD/colors
-
-echo -e "${W}${BOLD}System Info:
+echo -e "
+${W}${BOLD}System Info:
 $C  Distro    : $W$DISTRO
 $C  Host      : $W$MODEL
 $C  Kernel    : $W$(uname -sr)
 
-$C  CPU       : $W$PROCESSOR_NAME ($G$PROCESSOR_COUNT$W vCPU)
-$C  Memory    : $G$USED$W used, $G$AVAIL$W avail, $G$TOTAL$W total$W
+$C  Uptime    : $W$(uptime -p)
 $C  Load      : $G$LOAD1$W (1m), $G$LOAD5$W (5m), $G$LOAD15$W (15m)
 $C  Processes : $G$PROCESS_USER$W (user), $G$PROCESS_ALL$W (total)
-"
+
+$C  CPU       : $W$PROCESSOR_NAME ($G$PROCESSOR_COUNT$W vCPU)
+$C  Memory    : $G$USED$W used, $G$AVAIL$W avail, $G$TOTAL$W total$W"

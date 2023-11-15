@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+. $MOTD/colors
+
+current='/mnt/d/Clouds/Dropbox/Personal/current'
+DT=`cat $current/laptop_wsl_kali_datetime.txt`
+
+echo -e "$C  Local DT  : $W$DT"
+
+#printf "\n"
+#cat ~/test.txt

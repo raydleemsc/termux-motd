@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+. $MOTD/colors
+
+GCV=`cat ~/.gcloud/logs/gcl.txt | grep Your | awk '{ print $8 }'`
+GCU=`cat ~/.gcloud/logs/gcl.txt | grep available | awk '{ print $6 }'`
+
+echo -n -e "$C  GCloud Ver: $G$GCV"
+if [ $GCV != $GCU ]; then echo -e " $W==> $G$GCU"; fi
+if [ $GCV == $GCU ]; then echo -e " $W==$G latest"; fi
+echo -e "$W"

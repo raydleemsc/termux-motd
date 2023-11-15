@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+. $MOTD/colors
+
+UPTIME=`uptime -p`
+
+echo -e "$C  Uptime    : $W$UPTIME"
+
+#printf "\n"
+#uptime -p
